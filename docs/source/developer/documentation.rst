@@ -6,6 +6,7 @@ See  our  `Contributor
 Guide <https://github.com/jupyterlab/jupyterlab/blob/master/CONTRIBUTING.md>`_ for
 details on installation and testing.
 
+
 Writing Style
 ~~~~~~~~~~~~~
 
@@ -56,7 +57,7 @@ Element Names
 - The main work area can be referred to as the work area when the name is unambiguous.
 - When describing elements in the UI, colloquial names are preferred
   (e.g., “File browser” instead of “Files panel”).
-  
+
 The majority of names are written in lower case.  These names include:
 
 - tab
@@ -146,5 +147,3 @@ that matches the names of the source file in which they are used:
        sourcefile_editmenu.png
 
 This will help us to keep track of the images as documentation content evolves.
-
-

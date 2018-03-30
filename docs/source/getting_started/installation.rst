@@ -4,6 +4,7 @@ Installation
 ------------
 
 JupyterLab can be installed using ``conda``, ``pip``, or ``pipenv``.
+To develop JupyterLab, see our :ref:`developer instructions <dev_install>`.
 
 conda
 ~~~~~
@@ -79,7 +80,7 @@ For example, in the directory where ``pipenv``'s ``Pipfile`` and ``Pipfile.lock`
     pipenv shell
      jupyter lab
 
-
+.. _prereqs:
 
 Prerequisites
 ~~~~~~~~~~~~~
@@ -91,19 +92,22 @@ the version of the ``notebook`` package that you have installed:
 
     jupyter notebook --version
 
-Supported browsers
-~~~~~~~~~~~~~~~~~~
+    JupyterLab requires Jupyter Notebook version 4.3 or later.
 
-The latest versions of the following browsers are currently known to work:
+If you use ``conda``, you can install notebook using:
 
--  Firefox
--  Chrome
--  Safari
+.. code:: bash
+    conda install -c conda-forge notebook
 
-Earlier browser versions may also work, but come with no guarantees.
+or with ``pip``:
 
-JupyterLab uses CSS Variables for styling, which is one reason for the
-minimum versions listed above.  IE 11+ or Edge 14 do not support
-CSS Variables, and are not directly supported at this time.
-A tool like `postcss <http://postcss.org/>`__ can be used to convert the CSS files in the
-``jupyterlab/build`` directory manually if desired.
+.. code:: bash
+
+    pip install notebook
+
+You may also want to install `nb_conda_kernels` to have a kernel option for different [conda environments](http://conda.pydata.org/docs/using/envs.html).
+With ``conda``:
+
+.. code:: bash
+
+    conda install -c conda-forge nb_conda_kernels

@@ -23,52 +23,12 @@ All source code is written in [TypeScript](http://www.typescriptlang.org/Handboo
 
 ## Setting Up a Development Environment
 
-### Installing Node.js and jlpm
+Building JupyterLab from its GitHub source code requires Node.js version 5+ and Jupyter Notebook version 4.3 or later.
 
-Building JupyterLab from its GitHub source code requires Node.js version
-5+.
-
-If you use ``conda``, you can get it with:
-
-```bash
-conda install -c conda-forge nodejs
-```
-
-If you use [Homebrew](http://brew.sh/) on Mac OS X:
-
-```bash
-brew install node
-```
-
-You can also use the installer from the [Node.js](https://nodejs.org) website.
-
-
-## Installing JupyterLab
-
-JupyterLab requires Jupyter Notebook version 4.3 or later.
-
-If you use ``conda``, you can install notebook using:
-
-```bash
-conda install -c conda-forge notebook
-```
-
-You may also want to install `nb_conda_kernels` to have a kernel option for different [conda environments](http://conda.pydata.org/docs/using/envs.html)
-
-```bash
-conda install -c conda-forge nb_conda_kernels
-```
-
-If you use `pip`, you can install notebook using:
-
-```bash
-pip install notebook
-```
-
-Fork the JupyterLab [repository](https://github.com/jupyterlab/jupyterlab).
+To start developing JupyterLab, fork the JupyterLab [repository](https://github.com/jupyterlab/jupyterlab).
 
 Once you have installed the dependencies mentioned above, use the following
-steps:
+steps to install from source:
 
 ```bash
 git clone https://github.com/<your-github-username>/jupyterlab.git
@@ -80,37 +40,9 @@ jlpm run build:core  # Build the core mode assets (optional)
 jupyter lab build  # Build the app dir assets (optional)
 ```
 
-Notes:
-
-* The `jlpm` command is a JupyterLab-provided, locked version of the [yarn](https://yarnpkg.com/en/) package manager.  If you have `yarn` installed
-already, you can use the `yarn` command when developing, and it will use the
-local version of `yarn` in `jupyterlab/yarn.js` when run in the repository or
-a built application directory.
-
-* At times, it may be necessary to clean your local repo with the command `jlpm run clean:slate`.  This will clean the repository, and re-install and
-rebuild.
-
-* If `pip` gives a `VersionConflict` error, it usually means that the installed
-version of `jupyterlab_launcher` is out of date. Run `pip install --upgrade
-jupyterlab_launcher` to get the latest version.
-
-* To install JupyterLab in isolation for a single conda/virtual environment, you can add the `--sys-prefix` flag to the extension activation above; this will tie the installation to the `sys.prefix` location of your environment, without writing anything in your user-wide settings area (which are visible to all your envs):
-
-* You can run `jlpm run build:dev:prod` to build more accurate sourcemaps that show the original
-  Typescript code when debugging. However, it takes a bit longer to build the sources, so is used only to build for production
-  by default.
-
-If you are using a version of Jupyter Notebook earlier than 5.3, then
-you must also run the following command to enable the JupyterLab
-server extension:
-
-```bash
-jupyter serverextension enable --py --sys-prefix jupyterlab
-```
-
 For installation instructions to write documentation, please see [Writing Documentation](#writing-documentation)
 
-### Run JupyterLab
+### Running JupyterLab
 
 Start JupyterLab in development mode:
 
@@ -231,12 +163,6 @@ jlpm run build:packages
 ```
 
 ## [Writing Documentation](#writing-documenation)
-
-Documentation is written in Markdown and reStructuredText.  In particular, the documentation on our Read the Docs page is written in reStructuredText. To ensure that the Read the Docs page builds, you'll need to install the documentation dependencies with `conda`.  These dependencies are located in `docs/environment.yml`.  You can install the dependencies for building the documentation by creating a new conda environment:
-
-```bash
-conda env create -f docs/environment.yml
-```
 
 The Developer Documentation includes a [guide](http://jupyterlab.readthedocs.io/en/latest/developer/documentation.html) to writing documentation including writing style, naming conventions, keyboard shortcuts, and screenshots.
 
